@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Частотний аналіз тексту</title>
+    <title>Text Analyzer</title>
+    <style>
+        .button-container {
+            margin-top: 10px;
+        }
+
+        .button-container input[type="submit"],
+        .button-container input[type="button"] {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Введіть текст для аналізу</h1>
-    <form th:action="@{/}" method="post">
-        <textarea name="text" rows="10" cols="50"></textarea><br/>
-        <input type="submit" value="Аналізувати">
+    <h1>Write text to analyze</h1>
+    <form th:action="@{/analyze}" method="post">
+        <textarea name="text" rows="10" cols="50"></textarea>
+        <br />
+        <div class="button-container">
+            <input type="submit" value="Analyze">
+            <input type="button" value="Reset" onclick="window.location.href='/'">
+        </div>
     </form>
 
-    <h2>Результати:</h2>
+    <h2>Result:</h2>
     <ul th:each="entry : ${wordCounts}">
         <li th:text="${entry.key + ': ' + entry.value}"></li>
     </ul>
 </body>
+
 </html>

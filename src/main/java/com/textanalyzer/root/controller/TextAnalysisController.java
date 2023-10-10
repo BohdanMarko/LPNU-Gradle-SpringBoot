@@ -20,7 +20,7 @@ public class TextAnalysisController {
         return "analyze";
     }
 
-    @PostMapping("/")
+    @PostMapping("/analyze")
     public String analyzeText(@RequestParam("text") String text, Model model) {
         analysisModel.analyzeText(text);
         model.addAttribute("wordCounts", analysisModel.getWordCounts());
