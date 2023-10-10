@@ -1,15 +1,14 @@
-package com.awesomeproject.demo.controller;
+package com.textanalyzer.root.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.awesomeproject.demo.model.TextAnalysisModel;
+import com.textanalyzer.root.model.TextAnalysisModel;
 
 @Controller
 public class TextAnalysisController {
-
     private final TextAnalysisModel analysisModel;
 
     public TextAnalysisController() {
