@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Частотний аналіз тексту</title>
+</head>
+<body>
+    <h1>Введіть текст для аналізу</h1>
+    <form th:action="@{/analyze}" method="post">
+        <textarea name="text" rows="10" cols="50"></textarea><br/>
+        <input type="submit" value="Аналізувати">
+    </form>
+
+    <h2>Результати:</h2>
+    <ul th:each="entry : ${wordCounts}">
+        <li th:text="${entry.key + ': ' + entry.value}"></li>
+    </ul>
+</body>
+</html>
