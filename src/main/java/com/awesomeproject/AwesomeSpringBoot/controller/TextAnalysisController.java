@@ -16,12 +16,12 @@ public class TextAnalysisController {
         this.analysisModel = new TextAnalysisModel();
     }
 
-    @GetMapping("/analyze")
+    @GetMapping("/")
     public String index() {
         return "analyze";
     }
 
-    @PostMapping("/analyze")
+    @PostMapping("/")
     public String analyzeText(@RequestParam("text") String text, Model model) {
         analysisModel.analyzeText(text);
         model.addAttribute("wordCounts", analysisModel.getWordCounts());
