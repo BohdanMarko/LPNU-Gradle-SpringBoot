@@ -23,7 +23,9 @@ public class TextAnalysisController {
     @PostMapping("/analyze")
     public String analyzeText(@RequestParam("text") String text, Model model) {
         analysisModel.analyzeText(text);
+        analysisModel.setInputText(text);
         model.addAttribute("wordCounts", analysisModel.getWordCounts());
+        model.addAttribute("inputText", analysisModel.getInputText());
         return "analyze";
     }
 }

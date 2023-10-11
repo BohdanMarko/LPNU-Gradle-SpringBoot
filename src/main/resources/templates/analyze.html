@@ -19,7 +19,7 @@
 <body>
     <h1>Write text to analyze</h1>
     <form th:action="@{/analyze}" method="post">
-        <textarea name="text" rows="10" cols="50"></textarea>
+        <textarea name="text" rows="10" cols="50" th:text="${inputText}"></textarea>
         <br />
         <div class="button-container">
             <input type="submit" value="Analyze">
